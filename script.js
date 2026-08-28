@@ -20,6 +20,35 @@
     });
   });
 
+  const githubStarCount = document.querySelector('[data-github-star-count]');
+  const githubStarStatus = document.querySelector('[data-github-star-status]');
+
+  const loadGithubStarCount = async () => {
+    if (!githubStarCount) return;
+
+    try {
+      const response = await fetch('https://api.github.com/repos/UrbanGround/UrbanGround', {
+        headers: { Accept: 'application/vnd.github+json' },
+        cache: 'no-store'
+      });
+      if (!response.ok) return;
+
+      const repository = await response.json();
+      const stars = repository.stargazers_count;
+      if (!Number.isSafeInteger(stars) || stars < 0) return;
+
+      const formattedStars = new Intl.NumberFormat('en-US').format(stars);
+      githubStarCount.textContent = formattedStars;
+      if (githubStarStatus) {
+        githubStarStatus.textContent = `GitHub star count: ${formattedStars}.`;
+      }
+    } catch {
+      // Keep the visible em dash and accessible fallback when the API is unavailable.
+    }
+  };
+
+  void loadGithubStarCount();
+
   const playStage = document.querySelector('[data-play-stage]');
   const playStart = document.querySelector('[data-play-start]');
   const playExit = document.querySelector('[data-play-exit]');

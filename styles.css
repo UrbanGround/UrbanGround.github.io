@@ -183,7 +183,7 @@ button { color: inherit; }
 .app-link-label { font-weight: 700; letter-spacing: .015em; }
 .app-link-row a { color: #365f82; overflow-wrap: anywhere; text-decoration-color: #9db2c3; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .app-link-row a:hover, .app-link-row a:focus-visible { color: var(--ink); text-decoration-color: var(--ink); }
-.project-links { display: flex; gap: 10px; margin: 28px 0 0 77px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 0 77px; }
 .link-button {
   display: inline-flex;
   align-items: center;
@@ -197,11 +197,29 @@ button { color: inherit; }
   font-weight: 700;
   text-decoration: none;
 }
+.link-button:focus-visible { outline: 3px solid rgba(75, 146, 199, .4); outline-offset: 2px; }
 .link-button--dark { color: #fff; background: var(--ink); border-color: var(--ink); }
 .link-button--play { color: #fff; background: #2a9d8f; border-color: #2a9d8f; }
 .link-button--play:hover, .link-button--play:focus-visible { background: #237f75; border-color: #237f75; }
+.link-button--arxiv { color: #fff; background: #b31b1b; border-color: #981717; }
+.link-button--arxiv:hover, .link-button--arxiv:focus-visible { background: #921616; border-color: #7e1212; }
 .link-button--hf { color: #111; background: #ffd21e; border-color: #e6b900; }
 .link-button--hf:hover, .link-button--hf:focus-visible { background: #f2c400; border-color: #d9ad00; }
+.link-button--github { gap: 10px; }
+.link-button__label { display: inline-flex; align-items: center; gap: 8px; }
+.link-button__icon { flex: 0 0 auto; }
+.github-star-count {
+  min-width: 42px;
+  padding-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  border-left: 1px solid var(--line-dark);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.github-star-symbol { color: #a47316; font-size: .82rem; line-height: 1; }
 .link-button--disabled { cursor: default; user-select: none; }
 .dataset-links { margin: 12px 0 0 77px; display: flex; flex-wrap: wrap; gap: 10px; }
 .dataset-link {
