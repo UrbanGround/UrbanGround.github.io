@@ -200,6 +200,8 @@ button { color: inherit; }
 .link-button--dark { color: #fff; background: var(--ink); border-color: var(--ink); }
 .link-button--play { color: #fff; background: #2a9d8f; border-color: #2a9d8f; }
 .link-button--play:hover, .link-button--play:focus-visible { background: #237f75; border-color: #237f75; }
+.link-button--hf { color: #111; background: #ffd21e; border-color: #e6b900; }
+.link-button--hf:hover, .link-button--hf:focus-visible { background: #f2c400; border-color: #d9ad00; }
 .link-button--disabled { cursor: default; user-select: none; }
 .dataset-links { margin: 12px 0 0 77px; display: flex; flex-wrap: wrap; gap: 10px; }
 .dataset-link {
