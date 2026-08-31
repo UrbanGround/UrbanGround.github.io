@@ -594,6 +594,7 @@ button { color: inherit; }
 .footer-links a { color: var(--muted); font-size: .68rem; font-weight: 700; text-decoration: none; }
 .footer-links a:hover { color: var(--ink); }
 @media (max-width: 960px) {
+  .control-guide > div { column-gap: 5px; }
   .institution { padding-inline: 9px; }
   .figure-explorer { grid-template-columns: 1fr; }
   .figure-groups { padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
@@ -637,7 +638,7 @@ button { color: inherit; }
   .play-icon { width: 62px; height: 62px; }
   .agent-fields { grid-template-columns: 1fr; }
   .agent-task-types { grid-template-columns: 1fr; }
-  .control-guide > div { flex-wrap: wrap; justify-content: flex-start; }
+  .control-guide > div { flex-wrap: wrap; justify-content: flex-start; column-gap: 14px; }
   .demo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px 12px;
